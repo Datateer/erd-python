@@ -43,11 +43,14 @@ class Attribute():
     def to_dot(self):
         base = ATTRIBUTE_TAGS.format(
             ' ALIGN="LEFT"', self.name, '{key_opening}{name}{key_closing}')
-        return base.format(
-            key_opening='<u>' if self.is_primary_key else '',
-            key_closing='</u>' if self.is_primary_key else '',
-            name=FONT_TAGS.format(self.name)
-        )
+        key_opening = ''
+        key_closing = ''
+        if self.is_primary_key:
+            key_opening = '<u>'
+            key_closing=' (PK)</u>' 
+        elif self.is_foreign_key:
+            key_closing=' (FK)'
+        return base.format(key_opening=key_opening, name=FONT_TAGS.format(self.name), key_closing=key_closing)
 
 
 class Entity():
@@ -86,22 +89,28 @@ class Relationship():
         else:
             return f'<Relationship: {self.entity1} {self.card1}--{self.card2} {self.entity2}>'
 
-    def to_dot(self):
+    def to_dot(self, flip=False):
         labels = []
         label_str = ''
         port1 = ''
         port2 = ''
-        if self.card1:
-            labels.append(f'headlabel="{CARDINALITY_MAP[self.card1]}"')
-        if self.card2:
-            labels.append(f'taillabel="{CARDINALITY_MAP[self.card2]}"')
-        if self.card1 or self.card2:
+        card1 = self.card2 if flip else self.card1
+        card2 = self.card1 if flip else self.card2
+        if card1:
+            labels.append(f'headlabel="{CARDINALITY_MAP[card1]}"')
+        if card2 and not flip:
+            labels.append(f'taillabel="{CARDINALITY_MAP[card2]}"')
+        if card1 or card2:
             label_str = ' [{}]'.format(', '.join(labels))
 
-        if self.attr1:
-            port1 = f':"{self.attr1.name}"'
-        if self.attr2:
-            port2 = f':"{self.attr2.name}"'
+        attr1 = self.attr2 if flip else self.attr1
+        attr2 = self.attr1 if flip else self.attr2
+        if attr1:
+            port1 = f':"{attr1.name}"'
+        if attr2:
+            port2 = f':"{attr2.name}"'
 
-        return f'"{self.entity1.name}"{port1} -- "{self.entity2.name}"{port2}{label_str}'
+        entity1 = self.entity2 if flip else self.entity1
+        entity2 = self.entity1 if flip else self.entity2
+        return f'"{entity1.name}"{port1} -- "{entity2.name}"{port2}{label_str}'
         # "Person" -> "Hand"  [headlabel="*", taillabel="1"]

@@ -38,7 +38,7 @@ class TestModels(unittest.TestCase):
 
         dot = attr.to_dot()
 
-        self.assertIn('PORT="foreign_id"><FONT>foreign_id</FONT></TD>', dot)
+        self.assertIn('PORT="foreign_id"><FONT>foreign_id</FONT> (FK)</TD>', dot)
 
     def test_relationship_handles_empty_cardinality(self):
 
