@@ -1,6 +1,6 @@
 import ply.lex as lex
 
-from erd.models import Attribute, CARDINALITIES, Entity, Relationship
+from erd.models import Attribute, CARDINALITIES, Entity, Relationship, Cardinality
 
 # List of token names.   This is always required
 tokens = (
@@ -21,12 +21,15 @@ def t_ENTITY(t):
     return t
 
 def t_RELATIONSHIP(t):
-    r'[`\'"]?(.*?)[`\'"]?\s([1\*\?\+])--([1\*\?\+])\s[`\'"]?([^`\n]+)[`\'"]?'
+    # r'[`\'"]?(.*?)[`\'"]?\s([1\*\?\+])--([1\*\?\+])\s[`\'"]?([^`\n]+)[`\'"]?'
+    r'[`\'"]?(.*?)(?::(\w+))?[`\'"]?\s+([1\*\?\+])--([1\*\?\+])\s+[`\'"]?([^`:\n]+)[`\'"]?(?::(\w+))?'
     t.value = Relationship(
         entity1=lexer.lexmatch.group(4),
         entity2=lexer.lexmatch.group(7),
-        card1=lexer.lexmatch.group(5),
-        card2=lexer.lexmatch.group(6)
+        attr1=lexer.lexmatch.group(5),
+        attr2=lexer.lexmatch.group(8),
+        card1=Cardinality(lexer.lexmatch.group(6)),
+        card2=Cardinality(lexer.lexmatch.group(7))
     )
     return t
 
