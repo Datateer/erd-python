@@ -63,10 +63,16 @@ class TestGenerator(unittest.TestCase):
     def test_render_returns_string_output(self):
         expected_contents = ['"King Arthur":"attr_arthur_fk_bedevere" -- "Sir Bedevere":"attr_bedevere_pk"', '"King Arthur":"attr_arthur_fk_lancelot" -- "Sir Lancelot":"attr_lancelot_pk"', 'graph {']
 
-        output = render(self.objects)
+        output = render(self.objects, format='dot')
         for expected in expected_contents:
             self.assertIn(expected, output)
 
+
+    def test_render_creates_png(self):
+        expected_contents = ['"King Arthur":"attr_arthur_fk_bedevere" -- "Sir Bedevere":"attr_bedevere_pk"', '"King Arthur":"attr_arthur_fk_lancelot" -- "Sir Lancelot":"attr_lancelot_pk"', 'graph {']
+
+        output = render(self.objects, output_path='test-output/output.png', format='png')
+        self.assertIn('test-output', output)
 
 
         
