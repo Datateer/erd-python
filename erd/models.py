@@ -35,7 +35,10 @@ class Attribute():
         self.is_foreign_key = name.startswith(SPECIAL.FOREIGN_KEY.value)
 
     def __repr__(self):
-        return f'<Attribute: {self.entity.name}.{self.name}>'
+        if self.entity:
+            return f'<Attribute: {self.entity.name}.{self.name}>'
+        else:
+            return f'<Attribute: {self.name}>'
 
     def to_dot(self):
         base = ATTRIBUTE_TAGS.format(
@@ -78,7 +81,10 @@ class Relationship():
         self.roptions = roptions
 
     def __repr__(self):
-        return f'<Relationship: {self.entity1} {self.card1}--{self.card2} {self.entity2}>'
+        if self.attr1 and self.attr2:
+            return f'<Relationship: {self.entity1}:{self.attr1} {self.card1}--{self.card2} {self.entity2}:{self.attr2}>'
+        else:
+            return f'<Relationship: {self.entity1} {self.card1}--{self.card2} {self.entity2}>'
 
     def to_dot(self):
         labels = []
