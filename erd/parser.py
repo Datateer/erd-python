@@ -25,9 +25,9 @@ def t_RELATIONSHIP(t):
     r'[`\'"]?(.*?)(?::(\w+))?[`\'"]?\s+([1\*\?\+])--([1\*\?\+])\s+[`\'"]?([^`:\n]+)[`\'"]?(?::(\w+))?'
     t.value = Relationship(
         entity1=Entity(lexer.lexmatch.group(4)),
-        entity2=Entity(lexer.lexmatch.group(7)),
+        entity2=Entity(lexer.lexmatch.group(8)),
         attr1=Attribute(lexer.lexmatch.group(5)),
-        attr2=Attribute(lexer.lexmatch.group(8)),
+        attr2=Attribute(lexer.lexmatch.group(9)),
         card1=Cardinality(lexer.lexmatch.group(6)),
         card2=Cardinality(lexer.lexmatch.group(7))
     )
