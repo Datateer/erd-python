@@ -31,3 +31,20 @@ class TestErd(unittest.TestCase):
         help_result = runner.invoke(cli.main, ['--help'])
         assert help_result.exit_code == 0
         assert '--help  Show this message and exit.' in help_result.output
+
+    @unittest.skip('not implemented yet')
+    def test_input_filename_required(self):
+        raise NotImplementedError()
+
+    @unittest.skip('not implemented yet')
+    def test_outputfilename_required(self):
+        raise NotImplementedError()
+
+    @unittest.skip('not implemented yet')
+    def test_errors_if_input_file_not_found(self):
+        raise NotImplementedError()
+
+    @unittest.skip('not implemented yet')
+    def test_produces_output_file(self):
+        raise NotImplementedError()
+    

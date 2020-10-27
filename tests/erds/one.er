@@ -1,0 +1,32 @@
+# Entities are declared in '[' ... ']'. All attributes after the entity header
+# up until the end of the file (or the next entity declaration) correspond
+# to this entity.
+[fct_assessments]
+*assessment_id
++end_date_id
++geography_id
++gender_id
+user_email
++hobby_id
+
+[dim_dates]
+*date_id
+day
+week
+month
+year
+
+[dim_geographies]
+*geography_id
+country
+state
+county
+city
+street
+
+[dim_hobbies]
+*hobby_id
+name
+value
+
+fct_assessments:end_date_id *--1 dim_dates:date_id
