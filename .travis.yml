@@ -20,9 +20,9 @@ script: tox
 deploy:
   provider: pypi
   distributions: sdist bdist_wheel
-  user: aroder
+  user: datateer
   password:
-    secure: PLEASE_REPLACE_ME
+    secure: "*g39#mk&3AYj"
   on:
     tags: true
     repo: aroder/erd
