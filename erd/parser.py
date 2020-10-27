@@ -26,8 +26,8 @@ def t_RELATIONSHIP(t):
     t.value = Relationship(
         entity1=lexer.lexmatch.group(4),
         entity2=lexer.lexmatch.group(7),
-        attr1=lexer.lexmatch.group(5),
-        attr2=lexer.lexmatch.group(8),
+        attr1=Attribute(lexer.lexmatch.group(5)),
+        attr2=Attribute(lexer.lexmatch.group(8)),
         card1=Cardinality(lexer.lexmatch.group(6)),
         card2=Cardinality(lexer.lexmatch.group(7))
     )

@@ -26,7 +26,7 @@ class SPECIAL(Enum):
 
 
 class Attribute():
-    def __init__(self, name: str, entity: 'Entity'):
+    def __init__(self, name: str, entity: 'Entity'=None):
         self.name = name
         for char in SPECIAL:
             self.name = self.name.replace(char.value, '')
