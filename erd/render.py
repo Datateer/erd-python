@@ -13,7 +13,10 @@ def run_graph(dot, format, output_path='output.png'):
     
 def render(objects, output_path=None, format='png') -> str:
     e = '\n'.join(e.to_dot() for e in objects['entities'])
-    r = '\n'.join(r.to_dot() for r in objects['relationships'])
+    r = ''
+    for idx, rel in enumerate(objects['relationships'], start=1):
+        r = r + rel.to_dot(flip=idx % 2 == 0) + '\n'
+    # r = '\n'.join(rel.to_dot() for r in objects['relationships'])
     dot = f'{GRAPH_BEGINNING}\n{e}\n{r}\n}}\n'
 
     if format == 'png':

@@ -61,7 +61,7 @@ class TestGenerator(unittest.TestCase):
         self.assertEqual(actual_path, expected_path)
 
     def test_render_returns_string_output(self):
-        expected_contents = ['"King Arthur":"attr_arthur_fk_bedevere" -- "Sir Bedevere":"attr_bedevere_pk"', '"King Arthur":"attr_arthur_fk_lancelot" -- "Sir Lancelot":"attr_lancelot_pk"', 'graph {']
+        expected_contents = ['"King Arthur":"attr_arthur_fk_bedevere" -- "Sir Bedevere":"attr_bedevere_pk"', '"Sir Lancelot":"attr_lancelot_pk" -- "King Arthur":"attr_arthur_fk_lancelot"', 'graph {']
 
         output = render(self.objects, format='dot')
         for expected in expected_contents:
