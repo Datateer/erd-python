@@ -42,7 +42,7 @@ setup(
     long_description=readme + '\n\n' + history,
     include_package_data=True,
     keywords='erd, entity relationship, diagram',
-    name='erd',
+    name='erd-python',
     packages=find_packages(include=['erd', 'erd.*']),
     setup_requires=setup_requirements,
     test_suite='tests',
