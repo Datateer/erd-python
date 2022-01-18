@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v0.5.0 (2022-01-18)
+### Feature
+* Bump click version ([`bca5aa3`](https://github.com/Datateer/erd-python/commit/bca5aa377c240d62d91022164a5f4d20507df330))
+
 ## v0.4.0 (2022-01-18)
 ### Feature
 * Pypi upload ([`64f0500`](https://github.com/Datateer/erd-python/commit/64f0500e41dd9aa8ba6ba49073b2c33b47b3696c))
