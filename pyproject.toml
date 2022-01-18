@@ -1,0 +1,41 @@
+
+[tool.poetry]
+name = "erd-python"
+version = "0.1.0"
+description = "Generate ERD diagrams using python"
+authors = ["Datateer <dev@datateer.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+Click = "7.0"
+ply = ">=3.11"
+pygraphviz = ">=1.6"
+
+[tool.poetry.dev-dependencies]
+pip = "19.2.3"
+bump2version = "0.5.11"
+graphviz = "0.14.2"
+wheel = "0.33.6"
+watchdog = "0.9.0"
+flake8 = "3.7.8"
+tox = "3.14.0"
+coverage = "4.5.4"
+Sphinx = "1.8.5"
+twine = "1.14.0"
+Click = "7.0"
+ply = "3.11"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.semantic_release]
+version_variable = [
+    "erd/__init__.py:__version__",
+    "pyproject.toml:version"
+]
+branch = "main"
+upload_to_pypi = true
+upload_to_release = true
+build_command = "pip install poetry && poetry build"
