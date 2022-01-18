@@ -1,7 +1,7 @@
 
 [tool.poetry]
 name = "erd-python"
-version = "0.3.0"
+version = "0.4.0"
 description = "Generate ERD diagrams using python"
 authors = ["Datateer <dev@datateer.com>"]
 license = "MIT"

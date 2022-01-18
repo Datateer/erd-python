@@ -2,6 +2,11 @@
 
 <!--next-version-placeholder-->
 
+## v0.4.0 (2022-01-18)
+### Feature
+* Pypi upload ([`64f0500`](https://github.com/Datateer/erd-python/commit/64f0500e41dd9aa8ba6ba49073b2c33b47b3696c))
+* Pypi upload ([`e45d6ba`](https://github.com/Datateer/erd-python/commit/e45d6ba4d5133c4b458ac5dea9f287258b9c1208))
+
 ## v0.3.0 (2022-01-18)
 ### Feature
 * Semantic versioning ([`3f17754`](https://github.com/Datateer/erd-python/commit/3f177548c7b301da221a484557234d9ba67e9e9a))
