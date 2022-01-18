@@ -5,8 +5,8 @@
 
 import unittest
 
-from erd.render import render
-from erd.models import Attribute, Cardinality, Entity, Relationship
+from erd_python.render import render
+from erd_python.models import Attribute, Cardinality, Entity, Relationship
 
 class TestGenerator(unittest.TestCase):
     """Tests for generator module."""

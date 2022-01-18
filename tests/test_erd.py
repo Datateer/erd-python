@@ -6,8 +6,8 @@
 import unittest
 from click.testing import CliRunner
 
-from erd import erd
-from erd import cli
+from erd_python import erd
+from erd_python import cli
 
 
 class TestErd(unittest.TestCase):

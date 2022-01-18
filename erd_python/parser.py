@@ -1,6 +1,6 @@
 import ply.lex as lex
 
-from erd.models import Attribute, CARDINALITIES, Entity, Relationship, Cardinality
+from erd_python.models import Attribute, CARDINALITIES, Entity, Relationship, Cardinality
 
 # List of token names.   This is always required
 tokens = (

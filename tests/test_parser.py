@@ -5,7 +5,7 @@
 
 import unittest
 
-from erd import parser
+from erd_python import parser
 
 class TestErd(unittest.TestCase):
     """Tests for `erd.parser` package."""

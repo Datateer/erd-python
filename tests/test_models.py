@@ -5,7 +5,7 @@
 
 import unittest
 
-from erd.models import Attribute, Cardinality, Entity, Relationship
+from erd_python.models import Attribute, Cardinality, Entity, Relationship
 
 class TestModels(unittest.TestCase):
     """Tests for models module."""
