@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v0.6.2 (2022-02-12)
+### Fix
+* Version bump ([`69a7b2c`](https://github.com/Datateer/erd-python/commit/69a7b2c14fe711fa5d9f776dcd653864b323b216))
+
 ## v0.6.1 (2022-02-02)
 ### Fix
 * Downgrade click version ([`eff8a70`](https://github.com/Datateer/erd-python/commit/eff8a70862e5ac2418bf3fa771bc29ab0469394f))
