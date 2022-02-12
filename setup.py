@@ -10,7 +10,7 @@ with open('README.rst') as readme_file:
 with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
-requirements = ['Click>=7.0', 'ply>=3.11', 'pygraphviz>=1.6']
+requirements = ['Click>=7.0', 'ply>=3.11', 'pygraphviz>=1.6'] 
 
 setup_requirements = [ ]
 
