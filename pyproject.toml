@@ -8,7 +8,7 @@ license = "MIT"
 
 [tool.poetry.dependencies]
 python = "^3.8"
-click = ">=7.0,<8.0"
+click = ">=7.0"
 ply = ">=3.11"
 pygraphviz = ">=1.6"
 
